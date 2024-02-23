@@ -8,3 +8,7 @@ export interface IUser {
   image: string
   token: string
 }
+
+export interface IUserState {
+  user: IUser | null
+}

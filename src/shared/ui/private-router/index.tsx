@@ -1,18 +1,13 @@
-import { Outlet, useNavigate } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 
 const PrivateRouter = () => {
-    const navigate = useNavigate() 
-    const token = localStorage.getItem('token')
+    const token = sessionStorage.getItem('token')
 
-    if(token) {
-        navigate('/login')
+    if (!token) {
+        return <Navigate to='/login' />
     }
 
-    return (
-        <div>
-            <Outlet />
-        </div>
-    )
+    return <Outlet />
 }
 
 export default PrivateRouter

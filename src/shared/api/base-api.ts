@@ -7,8 +7,8 @@ const clientApi = axios.create({
 clientApi.interceptors.request.use(
   <T>(config: InternalAxiosRequestConfig<T>) => {
     // Do something before request is sent
-    const authToken = localStorage.get('token')
-    config.headers['authorization'] = authToken ? `Bearer ${authToken}` : null
+    const authToken = sessionStorage.getItem('token')
+    authToken && (config.headers['authorization'] = `Bearer ${authToken}`)
     return config
   }
 )
