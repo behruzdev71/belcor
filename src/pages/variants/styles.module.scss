@@ -1,0 +1,12 @@
+.variant {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background-color: #e3e3d3;
+  transition: 250ms ease-out;
+  cursor: pointer;
+}
+
+.variant:hover {
+  scale: 1.01;
+}

@@ -1,10 +1,12 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 
-import HomePage from '@/pages/home'
+import VariantsPage from '@/pages/variants'
 import LoginPage from '@/pages/login'
+import TestsPage from '@/pages/questions'
 
 import PrivateRouter from '@/shared/ui/private-router'
 import NotFoundPage from '@/pages/not-found'
+import ResultPage from '@/pages/result'
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +15,15 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <HomePage />
+                element: <VariantsPage />
+            },
+            {
+                path: 'test/:id',
+                element: <TestsPage />
+            },
+            {
+                path: 'result',
+                element: <ResultPage />
             }
         ]
     },
