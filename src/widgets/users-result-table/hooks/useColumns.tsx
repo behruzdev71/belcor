@@ -18,7 +18,7 @@ export const useColumns = () => {
 			header: () => <>Возрасть</>,
 			cell: (info) => info.getValue(),
 		}),
-		columnHelper.accessor("bank.currency", {
+		columnHelper.accessor("weight", {
 			header: () => <>Очков</>,
 			cell: (info) => info.getValue(),
 		})

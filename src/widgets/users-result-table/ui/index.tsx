@@ -10,7 +10,7 @@ import { useGetAllUsersQuery } from '@/entities/user/api/query'
 import { useColumns } from '../hooks/useColumns'
 
 const UsersResultTable = () => {
-    const {data} = useGetAllUsersQuery()
+    const { data } = useGetAllUsersQuery()
     const columns = useColumns()
 
     const table = useReactTable({
@@ -27,13 +27,9 @@ const UsersResultTable = () => {
                 {table.getHeaderGroups().map((headerGroup) => (
                     <Table.Tr key={headerGroup.id}>
                         {headerGroup.headers.map(header => (
-                            <Table.Th key={header.id}>
-                                {header.isPlaceholder
-                                    ? null
-                                    : flexRender(
-                                        header.column.columnDef.header,
-                                        header.getContext(),
-                                    )}
+                            <Table.Th key={header.id} onClick={header.column.getToggleSortingHandler()} styles={{ th: { cursor: 'pointer' } }}>
+                                {flexRender(header.column.columnDef.header, header.getContext())}
+                                &uarr;&darr;
                             </Table.Th>
                         ))}
                     </Table.Tr>
