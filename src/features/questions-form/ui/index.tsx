@@ -1,5 +1,6 @@
 
 import { Box, Button } from '@mantine/core'
+import { useWindowScroll } from '@mantine/hooks'
 import { Controller, useForm } from 'react-hook-form'
 
 import { Question } from '@/entities/question'
@@ -13,6 +14,7 @@ import { IQuestionsFormData } from '../model/types'
 import { useNavigate } from 'react-router-dom'
 
 const QuestionsForm = () => {
+    const scrollTo = useWindowScroll()[1];
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const questions = useAppSelector(({ question }) => question.questions)
@@ -20,6 +22,7 @@ const QuestionsForm = () => {
 
     const onSubmit = (data: IQuestionsFormData) => {
         dispatch(questionActions.setAnswers(data))
+        scrollTo({ y: 0 })
         navigate('/result')
     };
 

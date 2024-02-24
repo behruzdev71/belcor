@@ -7,6 +7,7 @@ import TestsPage from '@/pages/questions'
 import PrivateRouter from '@/shared/ui/private-router'
 import NotFoundPage from '@/pages/not-found'
 import ResultPage from '@/pages/result'
+import UsersResults from '@/pages/users-result'
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path: 'result',
                 element: <ResultPage />
+            },
+            {
+                path: 'users-result',
+                element: <UsersResults />
             }
         ]
     },

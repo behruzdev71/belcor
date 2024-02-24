@@ -16,7 +16,7 @@ const ResultPage = () => {
 
     function restart() {
         dispatch(questionActions.setAnswers(null))
-        navigate('/', { replace: true })
+        navigate('/users-result', { replace: true })
     }
 
     if (!answers) {
@@ -36,7 +36,7 @@ const ResultPage = () => {
                     isResult
                 />
             ))}
-            <Button className={styles.button} onClick={restart}>Начать заново!</Button>
+            <Button className={styles.button} onClick={restart}>Cмотреть резултати пользователей!</Button>
         </Container>
     )
 }
