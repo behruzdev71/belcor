@@ -12,7 +12,7 @@ const questionSlice = createSlice({
   name: 'question',
   initialState,
   reducers: {
-    setAnswers(state, action: PayloadAction<IAnswer>) {
+    setAnswers(state, action: PayloadAction<IAnswer | null>) {
       state.answers = action.payload
     }
   }
