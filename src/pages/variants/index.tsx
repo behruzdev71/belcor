@@ -12,7 +12,7 @@ const VariantsPage = () => {
     <Container fluid>
       <Flex direction='column' rowGap='sm' my='lg'>
         {variants.map((_, idx) => (
-          <Box key={idx} className={styles.variant} onClick={() => navigate(`/test/${idx}`)}>
+          <Box key={idx} className={styles.variant} onClick={() => navigate(`/test/${idx + 1}`)}>
             <Title order={3}>{idx + 1} - вариант</Title>
           </Box>
         ))}
